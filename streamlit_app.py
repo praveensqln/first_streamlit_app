@@ -21,13 +21,18 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 #display the table on the page
+
 streamlit.dataframe(fruits_to_show)
+
+fruit_choice = streamlit.text_input('What fruit would you like information about ?', 'kiwi')
+streamlit.write('The user entered', fruit_choice)
+
+
 import requests
 fruitvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 
 streamlit.header("Fruitvice Fruit Advice!")
 # streamlit.text(fruitvice_response.json())
-
 # Formates data
 fruityvice_normalized = pandas.json_normalize(fruitvice_response.json())
 #Display formated data
