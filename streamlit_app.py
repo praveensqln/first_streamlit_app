@@ -29,7 +29,7 @@ streamlit.write('The user entered', fruit_choice)
 
 
 import requests
-fruitvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+fruitvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice )
 
 streamlit.header("Fruitvice Fruit Advice!")
 # streamlit.text(fruitvice_response.json())
